@@ -6,6 +6,7 @@ import { CiHeart } from "react-icons/ci";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 
+
 import Link from "next/link";
 
 const Header = () => {
@@ -27,7 +28,7 @@ const Header = () => {
   return (
     <div>
       <div className="xl:flex xl:gap-36 flex xl:pl-28 xl:my-8 xl:justify-normal justify-between">
-        <h1 className="font-bold text-xl p-5 xl:p-0">Exclusive</h1>
+        <h1 className="font-bold text-xl p-5 xl:p-0 hover:text-red-600">Exclusive</h1>
         <button
           className="xl:hidden focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
