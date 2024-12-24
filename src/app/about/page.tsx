@@ -1,5 +1,9 @@
+import { CiTwitter } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 const about = () => {
   return (
     <div>
@@ -16,7 +20,7 @@ const about = () => {
         <div className="lg:w-1/2  py-5 px-4 lg:pl-20 lg:px-24">
           <h1 className="text-5xl text-center lg:text-left py-6">Our Story</h1>
           <p>
-            Launced in 2015, Exclusive is South Asia’s premier online shopping
+            Launced in 2015, Exclusive is South Asia premier online shopping
             makterplace with an active presense in Bangladesh. Supported by wide
             range of tailored marketing, data and service solutions, Exclusive
             has 10,500 sallers and 300 brands and serves 3 millioons customers
@@ -29,16 +33,24 @@ const about = () => {
           </p>
         </div>
         <div>
-          <img src="about-hero.png" alt="model" className="sm:w-full" />
+          <Image
+            src="/about-hero.png"
+            alt="model"
+            width={500}
+            height={500}
+            className="sm:w-full"
+          />
         </div>
       </div>
       <div className="container mx-auto px-4 py-28 ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center justify-center">
           <div className="flex flex-col items-center justify-center p-6 hover:bg-red-500 bg-white hover:text-white text-black border-gray-300 rounded-lg shadow-md">
             <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full ">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1077/1077976.png"
+              <Image
+                src="/ab1.png"
                 alt="Icon"
+                width={500}
+                height={500}
                 className="w-6 h-6"
               />
             </div>
@@ -48,9 +60,11 @@ const about = () => {
 
           <div className="flex flex-col items-center justify-center p-6 hover:bg-red-500 bg-white hover:text-white text-black rounded-lg shadow-md">
             <div className="w-12 h-12 flex items-center justify-center  bg-white rounded-full ">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/833/833314.png"
+              <Image
+                src="/ab2.png"
                 alt="Icon"
+                width={500}
+                height={500}
                 className="w-6 h-6"
               />
             </div>
@@ -60,9 +74,11 @@ const about = () => {
 
           <div className="flex flex-col items-center justify-center p-6 hover:bg-red-500 bg-white hover:text-white text-black border-gray-300 rounded-lg shadow-md">
             <div className="w-12 h-12 flex items-center justify-center  bg-white rounded-full">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png"
+              <Image
+                src="/ab3.png"
                 alt="Icon"
+                width={500}
+                height={500}
                 className="w-6 h-6 "
               />
             </div>
@@ -74,13 +90,15 @@ const about = () => {
 
           <div className="flex flex-col items-center justify-center p-6 hover:bg-red-500 bg-white hover:text-white text-black border-gray-300 rounded-lg shadow-md">
             <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1077/1077977.png"
+              <Image
+                src="/ab4.png"
                 alt="Icon"
+                width={500}
+                height={500}
                 className="w-6 h-6"
               />
             </div>
-            <h2 className="text-xl font-bold mt-3">25k</h2>
+            <h2 className="text-xl font-bold mt-3 ">25k</h2>
             <p className="text-sm text-center mt-1">
               Annual gross sale in our site
             </p>
@@ -89,19 +107,52 @@ const about = () => {
       </div>
       <div className="sm:flex gap-6 justify-center text-center">
         <div>
-          <img src="about1.png" alt="person1" className="py-5" />
+          <Image
+            src="/about1.png"
+            alt="person1"
+            width={500}
+            height={500}
+            className="py-5 w-full"
+          />
           <p>Tom Cruise</p>
           <p>Founder & Chairman</p>
+          <div className="flex gap-3 justify-center pt-2 ">
+            <CiTwitter className="size-5" />
+            <FaInstagram className="size-5" />
+            <FaLinkedinIn className="size-5" />
+          </div>
         </div>
         <div>
-          <img src="about2.png" alt="person2" className="py-5" />
+          <Image
+            src="/about2.png"
+            alt="person2"
+            width={500}
+            height={500}
+            className="py-5 w-full"
+          />
           <p>Emma Watson</p>
           <p>Managing Director</p>
+          <div className="flex gap-3 justify-center pt-2">
+            <CiTwitter className="size-5" />
+            <FaInstagram className="size-5" />
+            <FaLinkedinIn className="size-5" />
+          </div>
         </div>
         <div>
-          <img src="about3.png" alt="person3" className="py-5" />
+          <Image
+            src="/about3.png"
+            alt="person3"
+            width={500}
+            height={500}
+            className="py-5 w-full"
+          />
           <p>Will Smith</p>
-          <p>Product Designer</p>
+          <p>Product Designer </p>
+          <div className="flex gap-3 justify-center pt-2">
+            <CiTwitter className="size-5" />
+            <FaInstagram className="size-5" />
+            <FaLinkedinIn className="size-5" />
+          </div>
         </div>
         <br />
       </div>
@@ -110,9 +161,11 @@ const about = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="flex flex-col items-center">
             <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-200">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png"
+              <Image
+                src="/ab5.png"
                 alt="Delivery"
+                width={500}
+                height={500}
                 className="w-10 h-10"
               />
             </div>
@@ -124,9 +177,11 @@ const about = () => {
 
           <div className="flex flex-col items-center">
             <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-200">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/5975/5975478.png"
+              <Image
+                src="/ab6.png"
                 alt="Customer Service"
+                width={500}
+                height={500}
                 className="w-10 h-10"
               />
             </div>
@@ -136,9 +191,11 @@ const about = () => {
 
           <div className="flex flex-col items-center">
             <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-200">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
+              <Image
+                src="/ab7.png"
                 alt="Money Back"
+                width={500}
+                height={500}
                 className="w-10 h-10"
               />
             </div>

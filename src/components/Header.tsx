@@ -6,7 +6,6 @@ import { CiHeart } from "react-icons/ci";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 
-
 import Link from "next/link";
 
 const Header = () => {
@@ -28,7 +27,9 @@ const Header = () => {
   return (
     <div>
       <div className="xl:flex xl:gap-36 flex xl:pl-28 xl:my-8 xl:justify-normal justify-between">
-        <h1 className="font-bold text-xl p-5 xl:p-0 hover:text-red-600">Exclusive</h1>
+        <h1 className="font-bold text-xl p-5 xl:p-0 hover:text-red-600">
+          Exclusive
+        </h1>
         <button
           className="xl:hidden focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -165,36 +166,3 @@ const Header = () => {
   );
 };
 export default Header;
-
-// import React from "react";
-// import Link from "next/link";
-// // components/Navbar.js
-// export const Header = () => {
-//     const categories = [
-//       "Women's Fashion",
-//       "Men's Fashion",
-//       "Electronics",
-//       "Home & Garden",
-//       "Medicine",
-//       "Sports & Outdoors",
-//       "Baby's & Toys",
-//       "Groceries & Pets",
-//       "Health & Beauty"
-//     ];
-
-//     return (
-//       <nav className="bg-white shadow-md">
-//         <div className="container mx-auto">
-//           <ul className="flex flex-col">
-//             {categories.map((category) => (
-//               <li key={category} className="py-2 px-4 hover:bg-gray-100">
-
-//                   {category}
-
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       </nav>
-//     );
-//   };

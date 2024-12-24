@@ -1,211 +1,212 @@
-// import React from 'react'
-// import { IoIosArrowForward } from "react-icons/io";
-// const home = () => {
-//   return (
-//     <div>
-//     <hr className='border-t-2 border-gray-300  '/>
-//     <div className='flex items-start justify-between  '>
-           
-//  <div className='border-r-2 border-gray-300 pr-28  '>
-//         <ul className='pl-[110px] space-y-4 pt-12 font-medium  '>
-//         <li className='flex '>Woman's Fashion <IoIosArrowForward className='my-0.5  size-5' /></li>
-//         <li className='flex '>Men's Fashion <IoIosArrowForward className='my-0.5  size-5' /></li>
-//         <li>Electronics</li>
-//         <li>Home & Lifestyle</li>
-//         <li>Medicine</li>
-//         <li>Sports & Outdoor</li>
-//         <li>Baby's & Toys</li>
-//         <li>Groceries & Pets</li>
-//         <li>Health & Beauty</li>
-//       </ul>
-//       </div>
-//       <div className=' pr-14 pt-12'>
-//       <img src="Frame 560.png" alt="Frame" className=' top-11  sm:w-[880px] h-[340px]   '  />
-//     </div>
-//     </div>
+"use client";
+import Category from "@/components/Category";
+import Products from "@/components/Products";
+import ProductSlider from "@/components/ProductSlider";
+import Image from "next/image";
+import React, { useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+const Home = () => {
+  const slides = [
+    {
+      title: "iPhone 14 Series",
+      description: "Up to 10% off Voucher",
+      image: "/hero.png",
+    },
+    {
+      title: "MacBook Pro",
+      description: "Save Big on Latest Models",
+      image: "/mackbookpro.jpg",
+    },
+    {
+      title: "AirPods Max",
+      description: "Experience True Sound",
+      image: "/airpodmax5.jpg",
+    },
+  ];
+  const products = [
+    {
+      id: 1,
+      title: "PlayStation 5",
+      description: "Black and White version of the PS5 coming out on sale.",
+      image: "/na1.png",
+      link: "#",
+      span: "col-span-2 row-span-2",
+    },
+    {
+      id: 2,
+      title: "Women's Collections",
+      description: "Featured woman collections that give you another vibe.",
+      image: "/na2.png",
+      span: "col-span-2",
+    },
+    {
+      id: 3,
+      title: "Speakers",
+      description: "Amazon wireless speakers.",
+      image: "/na3.png",
+    },
+    {
+      id: 4,
+      title: "Perfume",
+      description: "GUCCI INTENSE OUD EDP.",
+      image: "/na4.png",
+    },
+  ];
 
-//     <section className="py-14">
-//       <div className="container mx-auto">
-//         <div className="flex  items-center mb-6">
-//           <h2 className="text-2xl font-bold">Flash Sales</h2>
-//           <div className="flex gap-2">
-            
-//             <div className="flex gap-2">
-//               <span className="font-semibold px-2 py-1 rounded">03 :</span>
-//               <span className="font-semibold px-2 py-1 rounded">23 :</span>
-//               <span className="font-semibold px-2 py-1 rounded">19 :</span>
-//               <span className="font-semibold px-2 py-1 rounded">56</span>
-//             </div>
-//           </div>
-//         </div>
-//     </div>
-//     </section>
-//               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-//       <img src="Frame 611.png" alt="img"  />
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-//               </div>
-//     </div>
-//   )
-// }
-
-// export default home
-
-
-
-
-
-
-
-
-
-// // // components/FlashSales.js
-// // export const FlashSales = () => {
-// //   const flashSaleItems = [
-// //     {
-// //       id: 1,
-// //       name: "HAVIT HV G92 Gamepad",
-// //       price: 120,
-// //       salePrice: 80,
-// //       rating: 4.5,
-// //       image: "/gamepad.jpg"
-// //     },
-// //     // Add more items as needed
-// //   ];
-
-// //   return (
-//     // <section className="py-8">
-//     //   <div className="container mx-auto">
-//     //     <div className="flex justify-between items-center mb-6">
-//     //       <h2 className="text-2xl font-bold">Flash Sales</h2>
-//     //       <div className="flex gap-2">
-//     //         <span>Ends in:</span>
-//     //         <div className="flex gap-2">
-//     //           <span className="bg-gray-200 px-2 py-1 rounded">03</span>
-//     //           <span className="bg-gray-200 px-2 py-1 rounded">23</span>
-//     //           <span className="bg-gray-200 px-2 py-1 rounded">19</span>
-//     //           <span className="bg-gray-200 px-2 py-1 rounded">56</span>
-//     //         </div>
-//     //       </div>
-//     //     </div>
-        
-// //         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-// //           {flashSaleItems.map((item) => (
-// //             <div key={item.id} className="border rounded-lg p-4">
-// //               <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
-// //               <h3 className="mt-2 font-semibold">{item.name}</h3>
-// //               <div className="flex gap-2 mt-1">
-// //                 <span className="text-red-500">${item.salePrice}</span>
-// //                 <span className="line-through text-gray-400">${item.price}</span>
-// //               </div>
-// //               <button className="mt-2 w-full bg-red-500 text-white py-2 rounded">
-// //                 Add to Cart
-// //               </button>
-// //             </div>
-// //           ))}
-// //         </div>
-// //       </div>
-// //     </section>
-// //   );
-// // };
-
-// // // components/Footer.js
-// // export const Footer = () => {
-// //   return (
-// //     <footer className="bg-black text-white pt-12 pb-6">
-// //       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-// //         <div>
-// //           <h3 className="text-xl font-bold mb-4">Exclusive</h3>
-// //           <p className="mb-4">Subscribe to get special offers, free giveaways, and more.</p>
-// //           <div className="flex">
-// //             <input
-// //               type="email"
-// //               placeholder="Enter your email"
-// //               className="px-4 py-2 bg-gray-800 rounded-l"
-// //             />
-// //             <button className="bg-red-500 px-4 rounded-r">
-// //               Subscribe
-// //             </button>
-// //           </div>
-// //         </div>
-        
-// //         <div>
-// //           <h3 className="text-xl font-bold mb-4">Support</h3>
-// //           <ul className="space-y-2">
-// //             <li>111 Bijoy sarani, Dhaka</li>
-// //             <li>exclusive@gmail.com</li>
-// //             <li>+88015-88888-9999</li>
-// //           </ul>
-// //         </div>
-        
-// //         <div>
-// //           <h3 className="text-xl font-bold mb-4">Account</h3>
-// //           <ul className="space-y-2">
-// //             <li><Link href="/account">My Account</Link></li>
-// //             <li><Link href="/login">Login / Register</Link></li>
-// //             <li><Link href="/cart">Cart</Link></li>
-// //             <li><Link href="/wishlist">Wishlist</Link></li>
-// //           </ul>
-// //         </div>
-        
-// //         <div>
-// //           <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-// //           <ul className="space-y-2">
-// //             <li><Link href="/privacy">Privacy Policy</Link></li>
-// //             <li><Link href="/terms">Terms of Use</Link></li>
-// //             <li><Link href="/faq">FAQ</Link></li>
-// //             <li><Link href="/contact">Contact</Link></li>
-// //           </ul>
-// //         </div>
-// //       </div>
-      
-// //       <div className="container mx-auto mt-8 pt-8 border-t border-gray-800">
-// //         <div className="flex justify-between items-center">
-// //           <p>© 2024 Exclusive. All rights reserved.</p>
-// //           <div className="flex gap-4">
-// //             {/* Add social media icons here */}
-// //           </div>
-// //         </div>
-// //       </div>
-// //     </footer>
-// //   );
-// // };
-
-// // // Layout.js
-// // import { Header } from './Header';
-// // import { Navbar } from './Navbar';
-// // import { Footer } from './Footer';
-
-// // export const Layout = ({ children }) => {
-// //   return (
-// //     <div className="min-h-screen flex flex-col">
-// //       <Header />
-// //       <Navbar />
-// //       <main className="flex-grow">
-// //         {children}
-// //       </main>
-// //       <Footer />
-// //     </div>
-// //   );
-// // };
-
-
-
-
-
-
-
-
-
-import React from 'react'
-
-const page = () => {
   return (
     <div>
-     
+      <div className="sm:flex">
+        {/* Sidebar */}
+        <ul className="sm:w-[30%] sm:pl-24 pl-5 pt-14 space-y-5">
+          <li className="flex font-medium">
+            Woman&apos;s Fashion
+            <IoIosArrowForward className="my-0.5  size-5" />
+          </li>
+          <li className="flex font-medium">
+            Men&apos;s Fashion <IoIosArrowForward className="my-0.5  size-5" />
+          </li>
+          <li className="font-medium">Electronics</li>
+          <li className="font-medium">Home & Lifestyle</li>
+          <li className="font-medium">Medicine</li>
+          <li className="font-medium">Sports & Outdoor</li>
+          <li className="font-medium">Baby&apos;s & Toys</li>
+          <li className="font-medium">Groceries & Pets</li>
+          <li className="font-medium">Health & Beauty</li>
+        </ul>
 
-     
+        {/* Hero Section with Slider */}
+        <div className="relative sm:w-[67%] bg-black mt-14 overflow-hidden">
+          {/* Slide Content */}
+          <div className="text-white  sm:flex sm:flex-col items-start justify-center px-10 sm:py-28 py-12   grid mb-52 sm:my-0">
+            <h2 className=" text-4xl font-semibold z-20">
+              {slides[currentSlide].title}
+            </h2>
+            <p className="text-lg mt-2 z-20">
+              {slides[currentSlide].description}
+            </p>
+            <button className="z-20 mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+              Shop Now →
+            </button>
+          </div>
+
+          {/* Slide Image */}
+          <Image
+            src={slides[currentSlide].image}
+            alt={`Slide ${currentSlide + 1}`}
+            width={580}
+            height={700}
+            className="absolute bottom-0 right-0   transition-all duration-500 "
+          />
+
+          {/* Dots for Navigation */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {slides.map((_, index) => (
+              <div
+                key={index}
+                className={`w-4 h-4 rounded-full cursor-pointer ${
+                  index === currentSlide ? "bg-red-500" : "bg-gray-500"
+                }`}
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <ProductSlider />
+      <Category />
+      <Products />
+      <section className="py-16 ">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="mb-8">
+            <h3 className="text-red-500 font-semibold text-lg">Featured</h3>
+            <h2 className="text-3xl font-bold">New Arrival</h2>
+          </div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className={`relative overflow-hidden rounded-lg shadow-lg ${
+                  product.span || "col-span"
+                }`}
+              >
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={500}
+                  height={500}
+                  className="w-full h-fit"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6 text-white">
+                  <h3 className="font-bold text-lg">{product.title}</h3>
+                  <p className="text-sm mb-4">{product.description}</p>
+                  <a
+                    href={product.link}
+                    className="bg-white text-black px-4 py-2 w-fit rounded font-semibold hover:bg-gray-200"
+                  >
+                    Shop Now
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-6 py-12 mt-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-200">
+              <Image
+                src="/ab5.png"
+                alt="Delivery"
+                width={500}
+                height={500}
+                className="w-10 h-10"
+              />
+            </div>
+            <h2 className="text-lg font-bold mt-4">FREE AND FAST DELIVERY</h2>
+            <p className="text-gray-600 mt-2">
+              Free delivery for all orders over $140
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-200">
+              <Image
+                src="/ab6.png"
+                alt="Customer Service"
+                width={500}
+                height={500}
+                className="w-10 h-10"
+              />
+            </div>
+            <h2 className="text-lg font-bold mt-4">24/7 CUSTOMER SERVICE</h2>
+            <p className="text-gray-600 mt-2">Friendly 24/7 customer support</p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-200">
+              <Image
+                src="/ab7.png"
+                alt="Money Back"
+                width={500}
+                height={500}
+                className="w-10 h-10"
+              />
+            </div>
+            <h2 className="text-lg font-bold mt-4">MONEY BACK GUARANTEE</h2>
+            <p className="text-gray-600 mt-2">We return money within 30 days</p>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Home;
