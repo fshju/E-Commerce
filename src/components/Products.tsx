@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-
+import Link from "next/link";
 type Product = {
   id: number;
   name: string;
@@ -127,7 +127,7 @@ const Products: React.FC = () => {
         <h2 className="text-lg font-semibold text-red-500">Our Products</h2>
         <h1 className="text-3xl font-bold mb-8">Explore Our Products</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="px-7  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {allProducts.slice(0, visibleProducts).map((product) => (
             <div
               key={product.id}
@@ -142,11 +142,16 @@ const Products: React.FC = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={200} 
-                  height={200} 
-                  className="w-full h-48 object-cover rounded-md"
+                  width={500} 
+                  height={500} 
+                  className="w-fit h-48 object-cover rounded-md mx-auto"
                 />
               </div>
+              <Link href="/products">
+              <button className="mt-4 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
+                Add To Cart
+              </button>
+              </Link>
               <h3 className="mt-4 text-lg font-semibold">{product.name}</h3>
               <p className="text-red-500 text-lg font-bold">{product.price}</p>
               <div className="flex items-center mt-2">
@@ -168,9 +173,6 @@ const Products: React.FC = () => {
                   ({product.reviews} reviews)
                 </span>
               </div>
-              <button className="mt-4 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
-                Add To Cart
-              </button>
             </div>
           ))}
         </div>

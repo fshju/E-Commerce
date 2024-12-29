@@ -1,5 +1,5 @@
-
 import Image from "next/image";
+import Link from "next/link";
 export default function Category() {
   const categories = [
     { name: "Phones", icon: "/bc1.png" },
@@ -47,7 +47,7 @@ export default function Category() {
   return (
     <div className="py-12 px-4 md:px-8 lg:px-16">
       {/* Browse by Category */}
-      <div className="mb-12">
+      <div className="mb-12 justify-center text-center sm:justify-normal sm:text-left">
         <h2 className="text-lg font-semibold text-red-500">Categories</h2>
         <h1 className="text-2xl font-bold mb-16">Browse By Category</h1>
         <div className="flex flex-wrap gap-4 justify-center items-center">
@@ -86,14 +86,15 @@ export default function Category() {
             <div
               key={index}
               className="border rounded-lg p-4 flex flex-col hover:shadow-lg"
-            >
+            ><Link href="/products">
               <Image
                 src={product.image}
                 alt={product.name}
-                width={200}
-                height={200}
-                className="h-40 w-full object-cover mb-4 bg-gray-100"
+                width={500}
+                height={500}
+                className="w-fit h-48 object-cover rounded-md mx-auto"
               />
+              </Link>
               <h3 className="font-medium text-lg">{product.name}</h3>
               <div className="flex items-center gap-2 text-red-500 mt-2">
                 <span className="font-semibold">{product.price}</span>
@@ -154,8 +155,8 @@ export default function Category() {
           <Image
             src="/speaker.hero.png"
             alt="hero2"
-            width={200}
-            height={200}
+            width={500}
+            height={500}
             className="w-[400px] sm:ml-40 pt-11"
           />
         </div>

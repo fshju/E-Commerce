@@ -10,19 +10,16 @@ import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [heartCount, setHeartCount] = useState(0);
 
   const handleMenuItemClick = () => {
     setIsMenuOpen(false);
+    setIsDropdownOpen(false);
   };
 
   const handleSearchToggle = () => {
     setIsSearchOpen(!isSearchOpen);
-  };
-
-  const handleHeartClick = () => {
-    setHeartCount(heartCount + 1);
   };
   return (
     <div>
@@ -66,20 +63,83 @@ const Header = () => {
           />
           <CiSearch className="size-5 relative right-8 top-1  " />
           <div className="flex relative top-0.5 gap-5 ">
-            <button onClick={handleHeartClick}>
-              <CiHeart className="size-7" />
-              {heartCount > 0 && (
-                <span className="absolute top-0 left-4 text-sm bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center">
-                  {heartCount}
-                </span>
+            <Link href="/wishlist">
+              <button>
+                <CiHeart className="size-7" />
+              </button>
+            </Link>
+            <Link href="/cart">
+              <RiShoppingCart2Line className="size-6" />
+            </Link>
+            <div className="relative">
+              <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                <FiUser className="size-6" />
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute right-0 top-10 bg-white shadow-lg rounded-lg w-56 z-10">
+                  <ul className="flex flex-col text-sm text-gray-700">
+                    <li className="p-3 hover:bg-gray-100">
+                      <Link href="/myaccount" onClick={handleMenuItemClick}>
+                        <div className="flex items-center gap-2">
+                          <FiUser className="size-6" />
+                          Manage My Account
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="p-3 hover:bg-gray-100">
+                      <a
+                        className="cursor-pointer"
+                        onClick={handleMenuItemClick}
+                      >
+                        <Link href="/cart">
+                          <div className="flex items-center gap-2">
+                            <RiShoppingCart2Line className="size-6" />
+                            My Orders
+                          </div>
+                        </Link>
+                      </a>
+                    </li>
+                    <li className="p-3 hover:bg-gray-100">
+                      <a
+                        className="cursor-pointer"
+                        onClick={handleMenuItemClick}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl">✖</span>
+                          My Cancellations
+                        </div>
+                      </a>
+                    </li>
+                    <li className="p-3 hover:bg-gray-100">
+                      <a
+                        className="cursor-pointer"
+                        onClick={handleMenuItemClick}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl">⭐</span>
+                          My Reviews
+                        </div>
+                      </a>
+                    </li>
+                    <li className="p-3 hover:bg-gray-100">
+                      <a
+                        className="cursor-pointer"
+                        onClick={handleMenuItemClick}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl">↩</span>
+                          Logout
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               )}
-            </button>
-
-            <RiShoppingCart2Line className="size-6" />
-            <FiUser className="size-6" />
+            </div>
           </div>
         </div>
       </div>
+      {/* Mobile */}
       {isMenuOpen && (
         <div className="xl:hidden bg-black text-white shadow-sm font-semibold ">
           <div className="flex flex-col items-center p-4 space-y-4 ">
@@ -112,7 +172,7 @@ const Header = () => {
               Signup
             </Link>
             <div className="flex gap-5 start">
-              <Link href="/login" onClick={handleMenuItemClick}>
+              <Link href="/myaccount" onClick={handleMenuItemClick}>
                 <span className="hover:text-blue-400 hover:scale-110 transition duration-300">
                   <FiUser className="text-blue-800 size-5" />
                 </span>
@@ -124,19 +184,13 @@ const Header = () => {
                   </span>
                 </button>
               </button>
-              <button onClick={handleMenuItemClick}>
-                <button onClick={handleHeartClick}>
+              <Link href="/wishlist">
+                <button onClick={handleMenuItemClick}>
                   <div className="relative">
                     <CiHeart className="opacity-70 text-red-600 size-5" />
-                    {heartCount > 0 && (
-                      <span className="absolute top-0 right-0 text-sm bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
-                        {heartCount}
-                      </span>
-                    )}
                   </div>
                 </button>
-              </button>
-
+              </Link>
               <Link href="/cart" onClick={handleMenuItemClick}>
                 <span className="hover:text-orange-400 hover:scale-110 transition duration-300">
                   <RiShoppingCart2Line className="text-orange-600 size-5" />
